@@ -1,19 +1,23 @@
 package com.rabahi.roman
 
+import java.security.InvalidParameterException
+
 class RomanNumeralConverter {
-
-    val romanDoodahs = "IVXLCDM  "
-
     fun convertRomanNumeral(input: Int): String {
-        val result = StringBuilder()
-        listOf(
-            Pair(1000, "M  "),
-            Pair(100, "CDM"),
-            Pair(10, "XLC"),
-            Pair(1, "IVX"),
-        ).forEach { result.append(deriveNumeral(input / it.first % 10, it.second)) }
+        when (input) {
+            in 1..4999 -> {
+                val result = StringBuilder()
+                listOf(
+                    Pair(1000, "M  "),
+                    Pair(100, "CDM"),
+                    Pair(10, "XLC"),
+                    Pair(1, "IVX"),
+                ).forEach { result.append(deriveNumeral(input / it.first % 10, it.second)) }
+                return result.toString()
+            }
 
-        return result.toString()
+        }
+        throw InvalidParameterException("input must be between 1 and 4999")
     }
 
     private fun deriveNumeral(input: Int, numerals: String): String {
