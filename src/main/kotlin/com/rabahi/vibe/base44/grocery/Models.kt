@@ -1,4 +1,4 @@
-package com.rabahi.vibe.grocery
+package com.rabahi.vibe.base44.grocery
 
 data class Product(
     val name: String,

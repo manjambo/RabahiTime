@@ -1,7 +1,6 @@
-package com.rabahi.vibe.grocery
+package com.rabahi.vibe.base44.grocery
 
 import io.kotest.core.spec.style.BehaviorSpec
-import io.kotest.matchers.shouldBe
 import io.kotest.matchers.string.shouldContain
 import java.time.LocalDate
 
